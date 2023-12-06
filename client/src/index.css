@@ -50,3 +50,21 @@
         transform: rotate(360deg);
     }
 }
+
+
+/* =====Nav Bar====== */
+
+.navbar{
+    background-color: black !important;
+    color: white !important;
+    height: 12vh;
+}
+
+.navbar-brand{
+    color: #fff !important;
+}
+
+.nav-link{
+    color: #fff !important;
+    margin: auto;
+}
