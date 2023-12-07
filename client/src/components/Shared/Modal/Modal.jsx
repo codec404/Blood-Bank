@@ -17,7 +17,6 @@ const Modal = () => {
       }
       const { data } = await API.post("/inventory/create-inventory", {
         email,
-        email: user?.email,
         organization: user?._id,
         inventoryType,
         bloodGroup,
@@ -106,7 +105,7 @@ const Modal = () => {
               </select>
               <InputType
                 labelFor={"email"}
-                label={"Donor Email"}
+                label={inventoryType === 'in' ? "Donor Email" : "Hospital Email"}
                 inputType={"email"}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
