@@ -164,6 +164,27 @@ export const getDonorController = async (req, res) => {
   }
 };
 
+//GET BLOOD RECORD OF 3
+export const getRecentInventoryController = async (req, res) => {
+  try {
+    const inventory = await inventoryModel.find({
+      organization: req.body.userId
+    }).limit(3).sort({createdAt: -1})
+    return res.status(200).send({
+      success: true,
+      message: "Fetched recent Inventory Data",
+      inventory
+    })
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Error in fetching Blood Records",
+      error,
+    });
+  }
+};
+
 export const getHospitalController = async (req, res) => {
   try {
     const organization = req.body.userId;

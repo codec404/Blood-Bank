@@ -57,7 +57,7 @@ export const bloodGroupDetailsController = async (req, res) => {
       })
     );
     return res.status(200).send({
-      succes: true,
+      success: true,
       message: "Blood Group Data passed successfully",
       bloodGroupData,
     });

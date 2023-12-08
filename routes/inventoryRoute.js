@@ -1,6 +1,6 @@
 import express from "express";
 import { userAuth } from "../middlewares/userAuth.js";
-import { createinventoryController, getDonorController, getHospitalController, getInventoryController, getInventoryHospitalController, getOrganizationController, getOrganizationControllerForHospital } from "../controllers/inventoryController.js";
+import { createinventoryController, getDonorController, getHospitalController, getInventoryController, getInventoryHospitalController, getOrganizationController, getOrganizationControllerForHospital, getRecentInventoryController } from "../controllers/inventoryController.js";
 
 const router = express.Router()
 
@@ -15,6 +15,9 @@ router.post('/get-hospital-inventory-data',userAuth,getInventoryHospitalControll
 
 //GET DONOR DATA
 router.get('/get-donor-data',userAuth,getDonorController)
+
+//GET RECENT INVENTORY
+router.get('/get-recent-inventory',userAuth,getRecentInventoryController)
 
 //GET HOSPITAL DATA
 router.get('/get-hospital-data',userAuth,getHospitalController)

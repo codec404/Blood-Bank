@@ -5,6 +5,7 @@ import testRoute from "./routes/testRoute.js";
 import authRoute from "./routes/authRoute.js";
 import inventoryRoute from "./routes/inventoryRoute.js";
 import analyticsRoute from "./routes/analyticsRoute.js";
+import adminRoute from "./routes/adminRoute.js";
 import cors from "cors";
 import morgan from "morgan";
 
@@ -27,6 +28,7 @@ app.use("/api/v1/test", testRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/inventory", inventoryRoute);
 app.use("/api/v1/analytics", analyticsRoute);
+app.use("/api/v1/admin", adminRoute);
 
 const port = process.env.PORT || 8000;
 

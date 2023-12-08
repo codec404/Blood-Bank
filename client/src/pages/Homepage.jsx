@@ -5,10 +5,12 @@ import Layout from "../components/Shared/Layout/Layout";
 import Modal from "../components/Shared/Modal/Modal";
 import API from "../services/API";
 import moment from 'moment'
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
-  const { loading, error } = useSelector((state) => state.auth);
+  const { loading, error,user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
+  const navigate = useNavigate()
 
   //GET function
   const getBloodRecords = async () => {
@@ -28,6 +30,9 @@ const Homepage = () => {
   }, []);
   return (
     <Layout>
+      {user?.role === 'Admin' && navigate("/admin")}
+      {user?.role === 'Donor' && navigate("/organization")}
+      {user?.role === 'Hospital' && navigate("/organization")}
       {error && <span>{alert(error)}</span>}
       {loading ? (
         <Spinner />
@@ -35,12 +40,12 @@ const Homepage = () => {
         <>
           <div className="container">
             <h4
-              className="ms-4"
+              className="ms-2 mt-1 d-flex align-items-center"
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
               style={{ cursor: "pointer" }}
             >
-              <i className="fa-solid fa-plus text-success py-4"></i>
+              <i className="fa-solid fa-plus text-success py-4 mx-2"></i>
               Add Inventory
             </h4>
             <table className="table">
