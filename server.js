@@ -8,6 +8,7 @@ import analyticsRoute from "./routes/analyticsRoute.js";
 import adminRoute from "./routes/adminRoute.js";
 import cors from "cors";
 import morgan from "morgan";
+import path from "path"
 
 // .env configuration
 dotenv.config();
@@ -30,6 +31,15 @@ app.use("/api/v1/inventory", inventoryRoute);
 app.use("/api/v1/analytics", analyticsRoute);
 app.use("/api/v1/admin", adminRoute);
 
+//STATIC FOLDER
+app.use(express.static(path.join(__dirname,'./client/build')))
+
+//STATIC ROUTE
+app.get("*",function(req,res){
+  res.sendFile(path.join(__dirname,"./client/build/index.html"));
+})
+
+//PORT
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
