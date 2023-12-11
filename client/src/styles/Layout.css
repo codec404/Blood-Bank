@@ -1,9 +1,8 @@
 .sideBar {
   height: 100vh !important;
   /* border-radius: 5px; */
-  background-color: #2e3200;
-  box-shadow: 0 0 2px gray;
-  color: white;
+  background-color: #020523;
+  box-shadow: 0 0 2px rgb(4, 74, 165);
 }
 
 .menu {
@@ -27,12 +26,15 @@
 }
 
 .active {
-  background-color: white;
+  border-bottom: 1px solid ;
+  border-color: cyan;
+  box-shadow: 1px 1px 2px cyan;
+  background-color: #020523;
   padding: 10px;
   margin-top: 25px;
 }
 
 .active a,
 .active i {
-  color: #2e3200;
+  color: cyan;
 }

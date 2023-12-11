@@ -18,7 +18,7 @@ const Form = ({ submitBtn, formTitle, formType }) => {
 
   return (
     <>
-      <form
+      <form className="card p-3"
         onSubmit={(e) => {
           if (formType === "login")
             return handleLogin(e, email, password, role);

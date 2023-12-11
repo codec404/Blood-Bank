@@ -3,6 +3,7 @@ import Layout from "../../components/Shared/Layout/Layout";
 import moment from "moment";
 import API from "../../services/API";
 import { useSelector } from "react-redux";
+import "../../styles/Table.css"
 
 const Organization = () => {
   const { user } = useSelector((state) => state.auth);
@@ -38,7 +39,7 @@ const Organization = () => {
     <Layout>
       {/* <h1>Donor Page</h1> */}
       <div className="container mt-4">
-        <table className="table">
+        <table className="table-striped" id="table-content">
           <thead>
             <tr>
               <th scope="col">Organization Name</th>

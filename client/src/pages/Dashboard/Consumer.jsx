@@ -3,6 +3,7 @@ import Layout from "../../components/Shared/Layout/Layout";
 import API from "../../services/API";
 import moment from "moment";
 import { useSelector } from "react-redux";
+import "../../styles/Table.css"
 
 const Donor = () => {
   const [data, setData] = useState([]);
@@ -36,7 +37,7 @@ const Donor = () => {
     <Layout>
       {/* <h1>Donor Page</h1> */}
       <div className="container mt-4">
-        <table className="table">
+        <table className="table-striped" id="table-content">
           <thead>
             <tr>
               <th scope="col">Blood Group</th>

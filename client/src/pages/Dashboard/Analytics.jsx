@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Shared/Layout/Header";
 import API from "../../services/API";
 import moment from "moment";
+import "../../styles/Table.css"
 
 const Analytics = () => {
   const [data, setData] = useState([]);
@@ -80,7 +81,7 @@ const Analytics = () => {
       <div className="container mt-3">
         <h1 className="my-3">Recent Blood Transfusions</h1>
         <hr />
-        <table className="table">
+        <table className="table-striped" id="table-content">
           <thead>
             <tr>
               <th scope="col">Blood Group</th>

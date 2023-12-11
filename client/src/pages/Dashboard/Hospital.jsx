@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../components/Shared/Layout/Layout";
 import API from "../../services/API";
 import moment from "moment";
+import "../../styles/Table.css"
 
 const Hospital = () => {
   const [data, setData] = useState([]);
@@ -26,7 +27,7 @@ const Hospital = () => {
     <Layout>
       {/* <h1>Donor Page</h1> */}
       <div className="container mt-4">
-        <table className="table">
+        <table className="table-striped" id="table-content">
           <thead>
             <tr>
               <th scope="col">Name</th>
